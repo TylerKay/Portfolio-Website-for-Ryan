@@ -23,35 +23,58 @@
                </a>
                <ul class="feat-show">
                   <li><a href="/digital_illustrations.html">Digital Illustrations</a></li>
-                  <li><a href="/physical_illustrations.html">Physical Illustrations</a></li>
+                  <li><a href="/traditional_illustrations.html">Traditional Illustrations</a></li>
                </ul>
+               <li class="active"><a href="/about_me.html">About me</a></li>
             </li>
             
          </ul>
       </nav>
-      <div class="content-portfolio">
-         <div class="header">
-            Digital Illustrations
+
+      <div id="content">
+         <div class="content-portfolio">
+            <div class="header">
+               Digital Illustrations
+            </div>
+
+            <main class="grid">
+               <div>
+                  <img src="/img/digital_illustrations/Portrait - digital_.png" alt="Photo 2">
+               </div>
+               <div>
+                  <img src="/img/digital_illustrations/pracccc.png" alt="Photo 2">
+               </div>
+               <div>
+                  <img src="/img/digital_illustrations/pracccc1.png" alt="Photo 2">
+               </div>
+               <div>
+                  <img src="/img/digital_illustrations/Environment - Digital _.png" alt="Photo 2">
+               </div>
+
+            </main>
+
          </div>
 
-         <main class="grid">
-            <img src="/img/PepeLaugh.jpg" alt="Photo 2">
-            <img src="/img/PepeLaugh.jpg" alt="Photo 2">
-            <img src="/img/PepeLaugh.jpg" alt="Photo 2">
-            <img src="/img/PepeLaugh.jpg" alt="Photo 2">
-            <img src="/img/PepeLaugh.jpg" alt="Photo 2">
-            <img src="/img/PepeLaugh.jpg" alt="Photo 2">
-            <img src="/img/PepeLaugh.jpg" alt="Photo 2">
-            <img src="/img/PepeLaugh.jpg" alt="Photo 2">
-            <img src="/img/PepeLaugh.jpg" alt="Photo 2"> 
-        
-          </main>
-
       </div>
+
       <script>
+         
+         const state = {
+            open: false
+         }
+
          $('.btn').click(function(){
            $(this).toggleClass("click");
            $('.sidebar').toggleClass("show");
+           if (state.open == false){
+               state.open = true;
+               openNav();
+               console.log("Open");
+            } else {
+               state.open = false;
+               closeNav();
+               console.log("Close");
+            }
          });
            $('.feat-btn').click(function(){
              $('nav ul .feat-show').toggleClass("show");
@@ -64,6 +87,15 @@
            $('nav ul li').click(function(){
              $(this).addClass("active").siblings().removeClass("active");
            });
+         
+
+           function openNav() {
+               document.getElementById("content").style.marginLeft = "250px";
+            }
+
+            function closeNav() {
+               document.getElementById("content").style.marginLeft = "0";
+            }
       </script>
    </body>
 </html>

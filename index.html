@@ -23,8 +23,9 @@
                </a>
                <ul class="feat-show">
                   <li><a href="/digital_illustrations.html">Digital Illustrations</a></li>
-                  <li><a href="/physical_illustrations.html">Physical Illustrations</a></li>
+                  <li><a href="/traditional_illustrations.html">Traditional Illustrations</a></li>
                </ul>
+               <li class="active"><a href="/about_me.html">About me</a></li>
             </li>
             
          </ul>
@@ -34,13 +35,32 @@
             Ryan Cho
          </div>
          <p>
-            About Me:
+            <br>
+            Hi! My name is Ryan Cho.
+            <br>
+            You can also call me Youngjun.
+            <br>
+            I'm an artist that likes to do art things.
          </p>
       </div>
       <script>
+         const state = {
+            open: false
+         }
+
+
          $('.btn').click(function(){
            $(this).toggleClass("click");
            $('.sidebar').toggleClass("show");
+           if (state.open == false){
+               state.open = true;
+               openNav();
+               console.log("Open");
+            } else {
+               state.open = false;
+               closeNav();
+               console.log("Close");
+            }
          });
            $('.feat-btn').click(function(){
              $('nav ul .feat-show').toggleClass("show");
@@ -53,6 +73,17 @@
            $('nav ul li').click(function(){
              $(this).addClass("active").siblings().removeClass("active");
            });
+
+
+           function openNav() {
+               document.getElementById("content").style.marginLeft = "250px";
+               // document.getElementById("main").style.marginLeft = "250px";
+            }
+
+            function closeNav() {
+               document.getElementById("content").style.marginLeft = "0";
+               // document.getElementById("main").style.marginLeft = "250px";
+            }
       </script>
    </body>
 </html>
